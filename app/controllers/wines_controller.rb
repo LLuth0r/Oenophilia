@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-    # before_action :set_wine, only: :show
+    before_action :set_wine, only: :show
     before_action :authorize_request, only: [:create, :update, :destroy]
 
     def index
@@ -10,7 +10,7 @@ class WinesController < ApplicationController
 
 
     def show
-        render json: @wine
+        render json: @wine, include: :vineyard
     end
 
 

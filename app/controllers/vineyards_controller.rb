@@ -10,7 +10,7 @@ class VineyardsController < ApplicationController
 
     #GET /vineyards/1
     def show
-        render json: @food, include: :wines
+        render json: @vineyard, include: :wines
     end
 
     #POST /vineyards
