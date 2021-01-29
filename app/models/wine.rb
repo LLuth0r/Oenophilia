@@ -1,4 +1,4 @@
 class Wine < ApplicationRecord
     belongs_to :user
-    has_many :vineyards
+    belongs_to :vineyard
 end

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :wines, dependent: :destroy
+    has_many :wines
     has_secure_password
 
     validates :username, presence: true, uniqueness: true
