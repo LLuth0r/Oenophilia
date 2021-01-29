@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_202050) do
+ActiveRecord::Schema.define(version: 2021_01_29_025409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,15 @@ ActiveRecord::Schema.define(version: 2021_01_28_202050) do
 
   create_table "wines", force: :cascade do |t|
     t.integer "vintage"
-    t.string "type"
-    t.string "varietal"
     t.integer "price_min"
     t.integer "price_max"
-    t.string "region"
     t.integer "size"
     t.bigint "user_id", null: false
     t.bigint "vineyard_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "varietal"
     t.index ["user_id"], name: "index_wines_on_user_id"
     t.index ["vineyard_id"], name: "index_wines_on_vineyard_id"
   end
