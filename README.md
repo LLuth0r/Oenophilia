@@ -169,7 +169,7 @@ Tablet Edit Product
 | Build Login / Signup|    H     |     3 hrs      |     0 hrs     |     TBD     |
 | Basic Styling       |    H     |     3 hrs      |     0 hrs     |     TBD     |
 | Advanced Styling    |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     0 hrs     |     TBD     |
+| TOTAL               |          |     45 hrs     |     0 hrs     |     TBD     |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
