@@ -1,5 +1,5 @@
 class VineyardsController < ApplicationController
-
+    before_action :authorize_request, only: [:create, :update, :destroy]
 
     #GET /vineyards
     def index
