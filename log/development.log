@@ -452,3 +452,179 @@ ActionController::RoutingError (uninitialized constant VineyardsController):
   [1m[36mVineyard Load (0.2ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards" ORDER BY "vineyards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mVineyard Load (0.4ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards" ORDER BY "vineyards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."vineyard_id" = $1[0m  [["vineyard_id", 15]]
+Started GET "/" for 127.0.0.1 at 2021-01-29 14:11:57 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/pak/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pak/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.0ms | Allocations: 292)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1524)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-01-29 14:11:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:12:04 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wine" for 127.0.0.1 at 2021-01-29 14:12:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/wine"):
+  
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:12:54 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/vineyards" for 127.0.0.1 at 2021-01-29 14:13:11 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/application_controller.rb:21: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+        render json: {errors e.message }, status: :unauthor...
+                             ^
+/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/application_controller.rb:21: syntax error, unexpected '}', expecting `end'
+...ender json: {errors e.message }, status: :unauthorized
+...                              ^
+):
+  
+app/controllers/application_controller.rb:21: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/application_controller.rb:21: syntax error, unexpected '}', expecting `end'
+app/controllers/application_controller.rb:21: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/application_controller.rb:21: syntax error, unexpected '}', expecting `end'
+app/controllers/vineyards_controller.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2021-01-29 14:13:16 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/application_controller.rb:21: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+        render json: {errors e.message }, status: :unauthor...
+                             ^
+/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/application_controller.rb:21: syntax error, unexpected '}', expecting `end'
+...ender json: {errors e.message }, status: :unauthorized
+...                              ^
+):
+  
+app/controllers/application_controller.rb:21: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/application_controller.rb:21: syntax error, unexpected '}', expecting `end'
+app/controllers/application_controller.rb:21: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/application_controller.rb:21: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2021-01-29 14:16:33 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 3.3ms | Allocations: 6177)
+
+
+Started GET "/vineyards" for 127.0.0.1 at 2021-01-29 14:16:48 -0500
+Processing by VineyardsController#index as HTML
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  ↳ app/controllers/vineyards_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 2.0ms | Allocations: 4160)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:16:55 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wine" for 127.0.0.1 at 2021-01-29 14:17:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/wine"):
+  
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:17:04 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users" for 127.0.0.1 at 2021-01-29 14:17:09 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 718)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:17:38 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:18:21 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wine" for 127.0.0.1 at 2021-01-29 14:18:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/wine"):
+  
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:18:29 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:19:54 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:19:56 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wine" for 127.0.0.1 at 2021-01-29 14:19:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/wine"):
+  
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:20:02 -0500
+  
+SyntaxError (/home/pak/Documents/General_Assembly/Unit_4/P4/The-Cellar/app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...  render json: @wine, include :vineyards
+...                              ^
+):
+  
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/wines_controller.rb:13: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/wines" for 127.0.0.1 at 2021-01-29 14:20:15 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 2.3ms | Allocations: 7089)
+
+
