@@ -5,12 +5,12 @@ export const getAllWines = async () => {
     return resp.data;
 }
 
-export const postWine = async () => {
+export const postWine = async (wineData) => {
     const resp = await api.post('/wines', {wine: wineData});
     return resp.data;
 }
 
-export const deleteWine = async () => {
+export const deleteWine = async (id) => {
     const resp = await api.delete(`/wines/${id}`);
     return resp;
 }

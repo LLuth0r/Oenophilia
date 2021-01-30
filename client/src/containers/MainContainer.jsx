@@ -1,11 +1,17 @@
 import React from 'react'
 import {useEffect, useState} from 'react';
 import {Switch, Route, useHistory} from 'react-router-dom';
+import CreateWine from '../screens/CreateWine/CreateWine';
+import Wines from '../screens/Wines/Wines';
+import WineDetail from '../screens/WineDetail/WineDetail';
+import EditWine from '../screens/EditWine/EditWine';
+import ProfilePage from '../screens/ProfilePage/ProfilePage';
+import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
 
 
 export default function MainContainer(props) {
     const [wines, setWines] = useState([]);
-    const [vineyards, setVineyards] = useState([]);
+    // const [vineyards, setVineyards] = useState([]);
     const history = useHistory();
     const {currentUser} = props;
 
@@ -17,13 +23,13 @@ export default function MainContainer(props) {
         fetchWines();
     }, []);
 
-    useEffect(() => {
-        const fetchVineyards = async () => {
-            const vineyardData = await getAllVineyards();
-            setVineyards(vineyardData);
-        }
-        fetchVineyards();
-    }, []);
+    // useEffect(() => {
+    //     const fetchVineyards = async () => {
+    //         const vineyardData = await getAllVineyards();
+    //         setVineyards(vineyardData);
+    //     }
+    //     fetchVineyards();
+    // }, []);
 
     const handleCreate = async (wineData) => {
         const newWine = await postWine(wineData);
@@ -70,7 +76,7 @@ export default function MainContainer(props) {
                />
            </Route>
            <Route path='/user'>
-               <User
+               <ProfilePage
                wines={wines}
                handleDelete={handleDelete}
                currentUser={currentUser}
