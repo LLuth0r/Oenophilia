@@ -38,9 +38,25 @@ function App() {
 
 
   return (
-    <div className="App">
-    Get Hacking Dummy!
-    </div>
+    <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Switch>
+        <Route path='/login'>
+          <Login
+            handleLogin={handleLogin}
+            />
+        </Route>
+        <Route path='/register'>
+          <Register
+            handleRegister={handleRegister}
+            />
+        </Route>
+        <Route path='/'>
+          <MainContainer
+          currentUser={currentUser}
+          />
+        </Route>     
+      </Switch>
+    </Layout>
   );
 }
 
