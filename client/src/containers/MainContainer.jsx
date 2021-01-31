@@ -54,28 +54,29 @@ export default function MainContainer(props) {
 
     return (
        <Switch>
-           <Route path='/wines'>
+           <Route exact path='/wines'>
                <Wines
                 wines={wines}
                 />
            </Route>
-           <Route path='/wines/:id/edit'>
+           <Route path='/wine/:id/edit'>
                <EditWine
                wines={wines}
                handleUpdate={handleUpdate}
                />
            </Route>
-           <Route path='/wines/:id'>
+           <Route path='/wine/:id'>
                <WineDetail
                 wines={wines}
                 />
            </Route>
-           <Route path='/wines/new'>
+           <Route exact path='/wines/add'>
                <CreateWine
                handleCreate={handleCreate}
+               currentUser={currentUser}
                />
            </Route>
-           <Route path='/profile'>
+           <Route exact path='/profile'>
                <ProfilePage
                wines={wines}
                handleDelete={handleDelete}

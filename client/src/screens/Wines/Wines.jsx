@@ -5,7 +5,7 @@ export default function Wines(props) {
     const { wines, currentUser } = props;
 
     return (
-        <div>
+        <div className='extreme_fuckery'>
             {wines.map(wine=> (
                 <React.Fragment key={wine.id}>
                     <NavLink to={`/wines/${wine.id}`}>
