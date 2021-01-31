@@ -1,0 +1,9 @@
+.landing-page {
+    max-width: 1500px;
+}
+
+.header-image {
+    height:200px;
+    position: absolute;
+    top:4rem;
+}

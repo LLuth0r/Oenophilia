@@ -7,7 +7,7 @@ import WineDetail from '../screens/WineDetail/WineDetail';
 import EditWine from '../screens/EditWine/EditWine';
 import ProfilePage from '../screens/ProfilePage/ProfilePage';
 import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
-
+import Header from '../layouts/Header/Header';
 
 export default function MainContainer(props) {
     const [wines, setWines] = useState([]);
@@ -75,7 +75,7 @@ export default function MainContainer(props) {
                handleCreate={handleCreate}
                />
            </Route>
-           <Route path='/user'>
+           <Route path='/profile'>
                <ProfilePage
                wines={wines}
                handleDelete={handleDelete}
