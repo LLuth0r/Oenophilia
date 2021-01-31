@@ -1,0 +1,46 @@
+.footer {
+    width: 100vw;
+    height:3.5rem;
+    position: fixed;
+    bottom:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #46494c;
+    }
+    
+    .contact-field {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      
+    }
+    
+    .aboutMe {
+        margin: 5px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      
+      .contactMe {
+        margin: 5px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    
+    .icon-area {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .linkedin_icon{
+        margin-right: 10px;
+    }
+
+    .github_icon {
+        margin-right: 10px;
+    }

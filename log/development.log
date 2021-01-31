@@ -1121,3 +1121,182 @@ Processing by WinesController#index as HTML
 Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 3.9ms | Allocations: 3095)
 
 
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:31:19 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 3.9ms | Allocations: 3095)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:32:32 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:35:11 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:37:46 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:38:34 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:39:08 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:02 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 3.5ms | Allocations: 3072)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:03 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:04 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 984)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:04 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:20 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:23 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:49:44 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:54:24 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 16:54:26 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 984)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 17:52:01 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 3.1ms | Allocations: 3099)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 17:52:03 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 17:52:07 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 19:48:55 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 3.6ms | Allocations: 3073)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 19:56:46 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 3.1ms | Allocations: 3072)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 19:58:41 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 20:47:11 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 3.4ms | Allocations: 3072)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 20:48:05 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 21:03:14 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 3.6ms | Allocations: 3072)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-01-30 21:03:19 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2021-01-30 21:05:11 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/auth/login"):
+  
