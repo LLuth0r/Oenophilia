@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+
+.navbar {
+    height: 4rem;
+    width: 100vw;
+    background-color: #6d6875;
+    opacity: 90%;
+    position: sticky;
+    top:0;
+    left:0;
+    font-family: "Krona One", sans-serif;
+  }
+
+  .navmenu {
+    display: flex;
+    justify-content: flex-end;  
+    font-size: 12px;
+}
+
+  .user {
+    font-size: 12px;
+    color: yellowgreen;
+    width:100%;
+    margin: 5px;
+  }
+
+  .allwines{
+    text-decoration: none;
+    margin: 5px;
+    color: white;
+    margin-top: 3rem;
+}
+
+.profile{
+    text-decoration: none;
+    margin: 5px;
+    color: white;
+    margin-top: 3rem;
+}
+
+.navlogin{
+    text-decoration: none;
+    margin: 5px;
+    color: white;
+    margin-top: 3rem;
+}
+
+.navregister{
+    text-decoration: none;
+    margin: 5px;
+    color: white;
+    margin-top: 3rem;
+}
+
+  .signout {
+    text-decoration: none;
+    color:white;
+    margin-top: 3rem;
+  }
+
+ 
+
