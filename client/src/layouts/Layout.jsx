@@ -7,7 +7,7 @@ export default function Layout(props) {
     
     return (
         <div className='layout'>
-            {props.username ? <UserNav username={ props.username}/> : <Nav />}
+            {props.currentUser ? <UserNav username={props.currentUser.username}/> : <Nav />}
             <div className="layout-children">{props.children}</div>
             <Footer />
         </div>

@@ -8,18 +8,19 @@ const UserNav = (props) => {
         <div className="navbar">
             <div className="navmenu">
                 <div className="user">
-                    Welcome {props.username.username}!
+                    Welcome {props.username}!
                 </div>
-                <NavLink className='allwines' to='/wines'>
-                    All Wines
-                </NavLink>
-                <NavLink className='profile' to='/profile'>
-                    Profile
-                </NavLink>
-                <NavLink className='signout' to='/signout'>
-                    SignOut
-                </NavLink>
-                
+                <div className="navigation">
+                    <NavLink className='allwines' to='/wines'>
+                        All Wines
+                    </NavLink>
+                    <NavLink className='profile' to='/profile'>
+                        Profile
+                    </NavLink>
+                    <NavLink className='signout' to='/signout'>
+                        SignOut
+                    </NavLink>
+                </div>
             </div>
         </div>
     )
