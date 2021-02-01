@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_153402) do
+ActiveRecord::Schema.define(version: 2021_02_01_205305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.string "sender"
+    t.string "subject"
+    t.string "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -28,9 +36,9 @@ ActiveRecord::Schema.define(version: 2021_01_31_153402) do
   create_table "vineyards", force: :cascade do |t|
     t.string "wine_region"
     t.string "location"
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "vineyard_name"
   end
 
   create_table "wines", force: :cascade do |t|
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_01_31_153402) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "varietal"
+    t.string "category"
     t.index ["user_id"], name: "index_wines_on_user_id"
     t.index ["vineyard_id"], name: "index_wines_on_vineyard_id"
   end

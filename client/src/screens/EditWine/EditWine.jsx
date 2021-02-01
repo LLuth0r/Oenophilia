@@ -15,7 +15,8 @@ export default function EditWine(props) {
         size: '',
         wine_region: '',
         location: '',
-        vineyardName: ''
+        vineyardName: '',
+        category: ''
     })
 
     const { name, vintage, varietal, price_min, price_max, size, vineyardName, wine_region, location } = formData;
@@ -57,6 +58,21 @@ export default function EditWine(props) {
         {
             value: '6L',
             label: 'Methuselah',
+        },
+    ];
+
+    const category = [
+        {
+            value: 'Red',
+            label: 'Red',
+        },
+        {
+            value: 'White',
+            label: 'White',
+        },
+        {
+            value: 'Champagne',
+            label: 'Champagne',
         },
     ];
 
@@ -114,6 +130,16 @@ export default function EditWine(props) {
           variant="outlined"
           type="text"
         />
+        <TextField
+          required
+          select
+          onChange={handleChange}
+          name="category"
+          value={category}
+          className="textfield"
+          label="Category"
+          variant="outlined"
+          ></TextField>
         <TextField
           required
           multiline
