@@ -1,5 +1,5 @@
 .profile-page{
-    margin: 75px 75px 75px 75px;
+    margin: 50px 75px 75px 75px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: repeat(5 auto);
@@ -44,8 +44,17 @@ a {
 }
 
 .user_wines {
+    margin-top: 15px;
     display: flex;
     justify-content: flex-start;
+}
+
+.delete_icon{
+    margin: 0;
+}
+
+.wine{
+    margin: 0 0 10px 15px;
 }
 
 .user_message_list {

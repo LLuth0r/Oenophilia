@@ -8,6 +8,10 @@ import EditWine from '../screens/EditWine/EditWine';
 import ProfilePage from '../screens/ProfilePage/ProfilePage';
 import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
 import {getAllVineyards, postVineyard, putVineyard, deleteVineyard, getOneVineyard } from '../services/vineyards';
+import WineCard from '../components/WineCard/WineCard';
+import RedWines from '../screens/RedWines/RedWines';
+import WhiteWines from '../screens/WhiteWines/WhiteWines';
+import Champagnes from '../screens/Champagnes/Champagnes';
 
 export default function MainContainer(props) {
     const [wines, setWines] = useState([]);
@@ -77,12 +81,30 @@ export default function MainContainer(props) {
                currentUser={currentUser}
                />
            </Route>
+           <Route path='/wines/white_wines'>
+               <WhiteWines
+               currentUser={currentUser}
+               />
+           </Route>
+           <Route path='/wines/red_wines'>
+               <RedWines
+               currentUser={currentUser}
+               />
+           </Route>
+           <Route path='/wines/champagnes'>
+               <Champagnes
+               currentUser={currentUser}
+               />
+           </Route>
            <Route exact path='/profile'>
                <ProfilePage
                wines={wines}
                handleDelete={handleDelete}
                currentUser={currentUser}
                />
+           </Route>
+           <Route path='/'>
+           <WineCard />
            </Route>
        </Switch>
     )

@@ -3,13 +3,11 @@ import './ProfilePage.css';
 import {NavLink} from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import UpdateIcon from '@material-ui/icons/Update';
 
 export default function ProfilePage(props) {
 
     const { currentUser, wines, handleDelete } = props;
-    console.log(props);
-
-
 
     return (
         <div className="profile-page">
@@ -18,6 +16,7 @@ export default function ProfilePage(props) {
                 <img src={currentUser.profile_picture} alt='' className='profile_pic' />
                 <h5>{currentUser.username}</h5>
                 <h5>{currentUser.email}</h5>
+                <h6>{currentUser.location}</h6>
             </div>
             <div className="user-wine-list">
                 <h5 className='wine-list'>Wine List</h5>
@@ -34,11 +33,13 @@ export default function ProfilePage(props) {
                     return currentUser.id === wine.user_id 
                 }).map(wine=> (
                         <div className='user_wines'>
-                        <DeleteIcon onClick={handleDelete}/>
-                        <NavLink to={`/wine/${wine.id}`}>
-                        <p key={wine.id}>{wine.name}</p>
+                        <DeleteIcon className='delete_icon' onClick={()=> handleDelete(wine.id)}/>
+                        <NavLink to={`/wine/${wine.id}/edit`}>
+                        <UpdateIcon />
                         </NavLink>
-                        
+                        <NavLink to={`/wine/${wine.id}`}>
+                            <p className='wine' key={wine.id}>{wine.vintage} {wine.name}</p>
+                        </NavLink>
                         </div>
                 ))}
                     

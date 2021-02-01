@@ -1,4 +1,4 @@
-.header{
+.carousel-images{
     height: 250px;
     width: 100vw;
 }
@@ -8,11 +8,4 @@
     height: 250px;
     width: 100vw;
     object-fit: cover;
-}
-
-.logo{
-    position: absolute;
-    z-index: 1;
-    margin-top: 0;
-    top: 15px;
 }
