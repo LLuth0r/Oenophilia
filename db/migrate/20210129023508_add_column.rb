@@ -1,0 +1,8 @@
+class AddColumn < ActiveRecord::Migration[6.1]
+  def change
+    change_table :wines do |t|
+    t.string :name
+    
+    end
+  end
+end

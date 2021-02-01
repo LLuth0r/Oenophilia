@@ -1,0 +1,11 @@
+.carousel-images{
+    height: 250px;
+    width: 100vw;
+}
+
+
+.header-image{
+    height: 250px;
+    width: 100vw;
+    object-fit: cover;
+}
