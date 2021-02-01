@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     #GET /users/1
     def show
-        render json: @user, include: :wines
+        render json: @user, include: :wines, :vineyards
         
     end
 
@@ -49,6 +49,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.required(:user).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :password)
     end
 end

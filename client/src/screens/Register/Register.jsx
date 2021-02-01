@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import './Register.css';
 import { Button } from '@material-ui/core';
+import Header from '../../layouts/Header/Header';
 
 export default function Register(props) {
     const [formData, setFormData] = useState({

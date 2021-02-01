@@ -1,16 +1,12 @@
 import React from 'react'
 import './Home.css';
 import Layout from '../../layouts/Layout';
-import Footer from '../../layouts/Footer/Footer';
+import Carousel from '../../components/Carousel/Carousel';
 
 
 export default function Home(props) {
 
     return (
-       <Layout username={props.user}>
-           <div className="landing_page">
-               Testing...
-           </div>
-       </Layout>
+          
     )
 }

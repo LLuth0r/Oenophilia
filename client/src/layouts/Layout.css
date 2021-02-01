@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
-
 .navbar {
     height: 4rem;
     width: 100vw;
@@ -12,51 +10,53 @@
   }
 
   .navmenu {
-    display: flex;
-    justify-content: flex-end;  
+    display: grid;
+    grid-template-columns: auto auto; 
     font-size: 12px;
 }
 
+.navigation {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
   .user {
+    grid-column-start: 1;
     font-size: 12px;
-    color: yellowgreen;
+    color: #c5c3c6;
     width:100%;
-    margin: 5px;
+    margin-left: 15px;
+    justify-content: flex-start;
+    margin-top: 3rem;
   }
 
   .allwines{
     text-decoration: none;
-    margin: 5px;
+    margin: 3rem 15px 0 0;
     color: white;
-    margin-top: 3rem;
 }
 
 .profile{
     text-decoration: none;
-    margin: 5px;
+    margin: 3rem 15px 0 0;
     color: white;
-    margin-top: 3rem;
 }
 
 .navlogin{
     text-decoration: none;
-    margin: 5px;
+    margin: 3rem 15px 0 0;
     color: white;
-    margin-top: 3rem;
 }
 
 .navregister{
     text-decoration: none;
-    margin: 5px;
+    margin: 3rem 15px 0 0;
     color: white;
-    margin-top: 3rem;
 }
 
   .signout {
     text-decoration: none;
     color:white;
-    margin-top: 3rem;
+    margin: 3rem 15px 0 0;
   }
-
- 
-

@@ -16,8 +16,9 @@ class WinesController < ApplicationController
 
     def create
         @wine = Wine.new(wine_params)
+        @wine.build_vineyard
         @wine.user = @current_user
-
+        puts @wine.save!
         if @wine.save
             render json: @wine, status: :created, location: @wine
         else
@@ -50,6 +51,7 @@ class WinesController < ApplicationController
     end
 
     def wine_params
-        params.require(:wine).permit(:name)
+        params.require(:wine).permit(:name, :vintage, :varietal, :price_min, 
+            :price_max, :size, vineyard_attributes: [:wine_region, :location, :name])
     end
 end

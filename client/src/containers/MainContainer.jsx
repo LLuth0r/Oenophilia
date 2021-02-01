@@ -7,11 +7,11 @@ import WineDetail from '../screens/WineDetail/WineDetail';
 import EditWine from '../screens/EditWine/EditWine';
 import ProfilePage from '../screens/ProfilePage/ProfilePage';
 import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
-
+import {getAllVineyards, postVineyard, putVineyard, deleteVineyard, getOneVineyard } from '../services/vineyards';
 
 export default function MainContainer(props) {
     const [wines, setWines] = useState([]);
-    // const [vineyards, setVineyards] = useState([]);
+    const [vineyards, setVineyards] = useState([]);
     const history = useHistory();
     const {currentUser} = props;
 
@@ -23,13 +23,13 @@ export default function MainContainer(props) {
         fetchWines();
     }, []);
 
-    // useEffect(() => {
-    //     const fetchVineyards = async () => {
-    //         const vineyardData = await getAllVineyards();
-    //         setVineyards(vineyardData);
-    //     }
-    //     fetchVineyards();
-    // }, []);
+    useEffect(() => {
+        const fetchVineyards = async () => {
+            const vineyardData = await getAllVineyards();
+            setVineyards(vineyardData);
+        }
+        fetchVineyards();
+    }, []);
 
     const handleCreate = async (wineData) => {
         const newWine = await postWine(wineData);
@@ -52,30 +52,32 @@ export default function MainContainer(props) {
         history.push('/user')
     }
 
+
     return (
        <Switch>
-           <Route path='/wines'>
+           <Route exact path='/wines'>
                <Wines
                 wines={wines}
                 />
            </Route>
-           <Route path='/wines/:id/edit'>
+           <Route path='/wine/:id/edit'>
                <EditWine
                wines={wines}
                handleUpdate={handleUpdate}
                />
            </Route>
-           <Route path='/wines/:id'>
+           <Route path='/wine/:id'>
                <WineDetail
                 wines={wines}
                 />
            </Route>
-           <Route path='/wines/new'>
+           <Route exact path='/wines/add'>
                <CreateWine
                handleCreate={handleCreate}
+               currentUser={currentUser}
                />
            </Route>
-           <Route path='/user'>
+           <Route exact path='/profile'>
                <ProfilePage
                wines={wines}
                handleDelete={handleDelete}

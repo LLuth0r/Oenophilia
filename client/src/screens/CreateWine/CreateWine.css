@@ -1,0 +1,25 @@
+.create_page{
+  height: 1000px;
+}
+
+.add_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+  }
+  
+  .form {
+  width: 300px;
+  }
+  
+  .textfield {
+  width: 300px;
+  }
+  
+  .MuiButtonBase-root{
+    display: flex;
+    justify-content: center;
+  }
