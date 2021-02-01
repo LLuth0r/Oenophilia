@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import {NavLink} from 'react-router-dom';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 

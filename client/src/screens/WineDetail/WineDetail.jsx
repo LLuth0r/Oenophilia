@@ -1,4 +1,3 @@
-import Header from '../../layouts/Header/Header';
 import { useEffect, useState } from 'react';
 import { getOneWine } from '../../services/wines';
 import { useParams } from 'react-router-dom';

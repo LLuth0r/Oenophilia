@@ -1,0 +1,23 @@
+.edit_page {
+    margin-top: 50px;
+}
+
+.edit_form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.edit_button {
+    width: 150px;
+}
+    
+.textfield {
+    width: 300px;
+}
+    
+.MuiButtonBase-root{
+    display: flex;
+    justify-content: center;
+}
