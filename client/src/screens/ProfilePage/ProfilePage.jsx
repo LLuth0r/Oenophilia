@@ -2,10 +2,11 @@ import React from 'react'
 import './ProfilePage.css';
 import {NavLink} from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export default function ProfilePage(props) {
 
-    const { currentUser, wines } = props;
+    const { currentUser, wines, handleDelete } = props;
     console.log(props);
 
 
@@ -24,20 +25,26 @@ export default function ProfilePage(props) {
                     <Button
                     className='add_wine_button'
                     variant='contained'
-                    color='secondary'
+                    color='primary'
                     href='/wines/add'
                     >Add Wine</Button>
+
                     
                 {wines.filter(wine=> {
                     return currentUser.id === wine.user_id 
                 }).map(wine=> (
-                    <NavLink to={`/wines/${wine.id}`}>
+                        <div className='user_wines'>
+                        <DeleteIcon onClick={handleDelete}/>
+                        <NavLink to={`/wine/${wine.id}`}>
                         <p key={wine.id}>{wine.name}</p>
-                    </NavLink>
-            ))}
+                        </NavLink>
+                        
+                        </div>
+                ))}
+                    
             </div>
-            <div className="user-wish-list">
-                <h5 className='wish-list'>Wine Wish List</h5>
+            <div className="user_message_list">
+                <h5 className='message_list'>Messages</h5>
             </div>
         </div>
     )
