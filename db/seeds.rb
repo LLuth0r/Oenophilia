@@ -9,11 +9,16 @@
 
 Wine.destroy_all
 Vineyard.destroy_all
+Message.destroy_all
 User.destroy_all
 
 @admin = User.create!(username: 'admin', email: 'admin@email.com', password: '123456')
 
 puts "#{User.count} users created"
+
+@message_1 = Message.create!(sender: 'Pak', subject: 'Dom Perignon', body: 'Interested in your 2001 bottle of Dom')
+
+puts "#{Message.count} messages created"
 
 @willamette_valley = Vineyard.create!(wine_region: 'Willamette Valley', location: 'New York', name: 'Ridgecrest Estate')
 @finger_lakes = Vineyard.create!(wine_region: 'Finger Lakes', location: 'New York', name: 'Treleaven')

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :wines
-    has_secure_password
+    has_many :messages
+    has_secure_password    
 
     validates :username, presence: true, uniqueness: true
     validates :email, presence: true, uniqueness: true

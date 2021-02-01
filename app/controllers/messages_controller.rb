@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :update, :destroy]
+  before_action :set_message, only: [:show ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /messages
   def index
@@ -10,13 +11,14 @@ class MessagesController < ApplicationController
 
   # GET /messages/1
   def show
-    render json: @message
+    render json: @message, include: :user
   end
 
   # POST /messages
   def create
     @message = Message.new(message_params)
-
+    @message.user = @current_user
+    puts @message.save!
     if @message.save
       render json: @message, status: :created, location: @message
     else
@@ -35,6 +37,7 @@ class MessagesController < ApplicationController
 
   # DELETE /messages/1
   def destroy
+    @message = @current_user.messages.find(params[:id])
     @message.destroy
   end
 

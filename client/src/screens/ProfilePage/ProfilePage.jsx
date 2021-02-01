@@ -7,7 +7,7 @@ import UpdateIcon from '@material-ui/icons/Update';
 
 export default function ProfilePage(props) {
 
-    const { currentUser, wines, handleDelete } = props;
+    const { currentUser, wines, messages, handleDelete } = props;
 
     return (
         <div className="profile-page">
@@ -46,6 +46,14 @@ export default function ProfilePage(props) {
             </div>
             <div className="user_message_list">
                 <h5 className='message_list'>Messages</h5>
+                {messages.filter(message=> {
+                    return currentUser.id === message.user_id 
+                }).map(message=> (
+                        <div className='user_wines'>
+                            <DeleteIcon className='delete_icon' onClick={()=> handleDelete(message.id)}/>
+                            <p className='wine' key={message.id}>{message.body}</p>
+                        </div>
+                ))}
             </div>
         </div>
     )
