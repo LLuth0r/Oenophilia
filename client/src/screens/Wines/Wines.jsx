@@ -1,5 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom';
+import Header from '../../layouts/Header/Header';
 
 export default function Wines(props) {
     const { wines, currentUser } = props;
@@ -8,7 +9,7 @@ export default function Wines(props) {
         <div className='extreme_fuckery'>
             {wines.map(wine=> (
                 <React.Fragment key={wine.id}>
-                    <NavLink to={`/wines/${wine.id}`}>
+                    <NavLink to={`/wine/${wine.id}`}>
                         <p>{wine.name}</p>
                         </NavLink>
                 </React.Fragment>

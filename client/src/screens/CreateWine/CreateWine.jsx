@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import './CreateWine.css';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -13,9 +12,12 @@ export default function CreateWine(props) {
         price_min: '',
         price_max:'',
         size: '',
+        wine_region: '',
+        location: '',
+        vineyardName: ''
     })
 
-    const { name, vintage, varietal, price_min, price_max, size } = formData;
+    const { name, vintage, varietal, price_min, price_max, size, vineyardName, wine_region, location } = formData;
     const { handleCreate } = props;
     const bottle_size = [
         {
@@ -66,6 +68,7 @@ export default function CreateWine(props) {
     }
 
     return (
+        <div className='create_page'>
         <form className='add_form' onSubmit={(e)=> {
             e.preventDefault();
             handleCreate(formData)
@@ -110,7 +113,6 @@ export default function CreateWine(props) {
           label="Min Price"
           variant="outlined"
           type="number"
-          startAdornment={<InputAdornment position="start">$</InputAdornment>}
         />
         <TextField
           required
@@ -121,7 +123,6 @@ export default function CreateWine(props) {
           label="Max Price"
           variant="outlined"
           type="number"
-        //   startAdornment={<InputAdornment position="start">$</InputAdornment>}
         />
         <TextField
           required
@@ -139,9 +140,20 @@ export default function CreateWine(props) {
                 </MenuItem>
             ))}
         </TextField>
+        <TextField
+          required
+          multiline
+          onChange={handleChange}
+          name="vineyardName"
+          value={vineyardName}
+          className="textfield"
+          label="Vineyard Name"
+          variant="outlined"
+        />
          <Button type="submit" className="add-product-button" variant="contained">
             Add Wine
         </Button>
         </form>
+    </div>
     )
 }

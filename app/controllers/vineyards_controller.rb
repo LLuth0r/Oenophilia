@@ -44,6 +44,6 @@ class VineyardsController < ApplicationController
     end
 
     def vineyard_params
-        params.require(:vineyard).permit(:name)
+        params.require(:vineyard).permit(:name, :wine_region, :location)
     end
 end

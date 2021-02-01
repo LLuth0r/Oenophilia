@@ -1,6 +1,7 @@
 import './Layout.css';
 import Footer from './Footer/Footer';
 import { Link } from 'react-router-dom';
+import Header from '../layouts/Header/Header';
 
 export default function Layout(props) {
     const { currentUser, handleLogout } = props;
@@ -33,6 +34,7 @@ export default function Layout(props) {
                 </div>            
             )}
             </div>
+            <Header />
             {props.children}
             <Footer />
         </div>
