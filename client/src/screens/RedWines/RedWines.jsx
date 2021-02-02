@@ -2,16 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function RedWines(props) {
-    const { currentUser, wines } = props;
+    const { wines } = props;
 
     return (
-        <div className='red_wines'>
-            {/* {wines.filter(wine=> {
-                return wine.category === 'red'}).map(wine=> (
+        <div className='reds'>
+            {wines.filter((wine) => {
+                return wine.category === 'Red'}).map((wine) => (
                     <Link className='card' to={`/wine/reds`}>
-                    <div>Red Wine</div>   
+                    <div>{wine.name}</div>   
                     </Link>             
-            ))} */}
+            ))}
         </div>
     )
 }

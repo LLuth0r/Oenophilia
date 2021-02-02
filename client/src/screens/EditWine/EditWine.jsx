@@ -16,10 +16,10 @@ export default function EditWine(props) {
         wine_region: '',
         location: '',
         vineyardName: '',
-        category: ''
+        category: '',
     })
 
-    const { name, vintage, varietal, price_min, price_max, size, vineyardName, wine_region, location } = formData;
+    const { name, vintage, category, varietal, price_min, price_max, size, vineyardName, wine_region, location } = formData;
     const { wines, handleUpdate } = props;
     const { id } = useParams();
     const bottle_size = [
@@ -61,7 +61,7 @@ export default function EditWine(props) {
         },
     ];
 
-    const category = [
+    const type = [
         {
             value: 'Red',
             label: 'Red',
@@ -137,9 +137,15 @@ export default function EditWine(props) {
           name="category"
           value={category}
           className="textfield"
-          label="Category"
+          label="Type"
           variant="outlined"
-          ></TextField>
+          >
+              {type.map((option)=> (
+                <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
+            ))}
+          </TextField>
         <TextField
           required
           multiline
