@@ -48,7 +48,7 @@ export default function MainContainer(props) {
     const handleCreate = async (wineData) => {
         const newWine = await postWine(wineData);
         setWines(prevState => [...prevState, newWine])
-        history.push('/user')
+        history.push('/profile')
     }
 
     const handleDelete = async (id) => {
@@ -101,16 +101,19 @@ export default function MainContainer(props) {
            <Route path='/wines/white_wines'>
                <WhiteWines
                currentUser={currentUser}
+               wines={wines}
                />
            </Route>
            <Route path='/wines/red_wines'>
                <RedWines
                currentUser={currentUser}
+               wines={wines}
                />
            </Route>
            <Route path='/wines/champagnes'>
                <Champagnes
                currentUser={currentUser}
+               wines={wines}
                />
            </Route>
            <Route exact path='/profile'>
