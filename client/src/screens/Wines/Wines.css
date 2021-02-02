@@ -15,7 +15,6 @@
     grid-template-columns: 100px 275px 100px 160px 125px 125px 125px;
     grid-template-rows: repeat(1, auto);
     text-align: center;
-
 }
 
 .vintage {

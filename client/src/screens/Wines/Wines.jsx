@@ -6,8 +6,6 @@ import './Wines.css';
 export default function Wines(props) {
     const { wines, currentUser } = props;
 
-
-
     return (
         <div className='wine_page'>
             <div className='wines_table_header'>

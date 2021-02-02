@@ -139,7 +139,13 @@ export default function EditWine(props) {
           className="textfield"
           label="Category"
           variant="outlined"
-          ></TextField>
+          >
+              {category.map((option)=> (
+                <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
+            ))}
+          </TextField>
         <TextField
           required
           multiline
