@@ -7,7 +7,6 @@ import WineDetail from '../screens/WineDetail/WineDetail';
 import EditWine from '../screens/EditWine/EditWine';
 import ProfilePage from '../screens/ProfilePage/ProfilePage';
 import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
-import {getAllVineyards, postVineyard, putVineyard, deleteVineyard, getOneVineyard } from '../services/vineyards';
 import {getAllMessages, postMessage, deleteMessage, getOneMessage } from '../services/messages';
 import WineCard from '../components/WineCard/WineCard';
 import RedWines from '../screens/RedWines/RedWines';
@@ -27,14 +26,6 @@ export default function MainContainer(props) {
             setWines(wineData)
         }
         fetchWines();
-    }, []);
-
-    useEffect(() => {
-        const fetchVineyards = async () => {
-            const vineyardData = await getAllVineyards();
-            setVineyards(vineyardData);
-        }
-        fetchVineyards();
     }, []);
 
     useEffect(() => {
@@ -79,6 +70,8 @@ export default function MainContainer(props) {
            <Route exact path='/wines'>
                <Wines
                 wines={wines}
+                vineyards={vineyards}
+                currentUser={currentUser}
                 />
            </Route>
            <Route path='/wine/:id/edit'>

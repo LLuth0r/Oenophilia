@@ -13,13 +13,11 @@ export default function EditWine(props) {
         price_min: '',
         price_max:'',
         size: '',
-        wine_region: '',
-        location: '',
         vineyardName: '',
         category: '',
     })
 
-    const { name, vintage, category, varietal, price_min, price_max, size, vineyardName, wine_region, location } = formData;
+    const { name, vintage, category, varietal, price_min, price_max, size, vineyardName} = formData;
     const { wines, handleUpdate } = props;
     const { id } = useParams();
     const bottle_size = [

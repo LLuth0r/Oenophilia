@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 export default function ProfilePage(props) {
 	
 	const { currentUser, wines, messages, handleDelete } = props;
+	
 
  
 	return (

@@ -8,6 +8,8 @@
     grid-template-columns: 100px 275px 100px 160px 125px 125px 125px;
     grid-template-rows: repeat(1, auto);
     text-align: center;
+    margin-left: 25px;
+    width: 80vw;
 }
 
 .wines {
@@ -31,5 +33,16 @@
 
 .variety {
     grid-column-start: 4;
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 800px) {
+    .wines_table_header {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10vw 0 10vw;
+        width: 80vw;
+    }
 }
 

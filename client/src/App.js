@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState} from 'react';
 import {Route, Switch, useHistory } from 'react-router-dom';
-import { loginUser, registerUser, verifyUser, changePassword, removeToken } from './services/auth';
+import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
 import Layout from './layouts/Layout';
 import Login from './screens/Login/Login';
 import Register from './screens/Register/Register';

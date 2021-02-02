@@ -38,9 +38,7 @@ export default function CreateWine(props) {
 		price_max,
 		size,
 		vineyardName,
-		wine_region,
-		location,
-    } = formData;
+		} = formData;
     
 	const { handleCreate } = props;
 	const bottle_size = [
