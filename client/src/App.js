@@ -6,7 +6,6 @@ import Layout from './layouts/Layout';
 import Login from './screens/Login/Login';
 import Register from './screens/Register/Register';
 import MainContainer from './containers/MainContainer';
-import WineCard from './components/WineCard/WineCard';
 
 
 

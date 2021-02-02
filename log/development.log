@@ -5882,3 +5882,869 @@ Migrating to AddWineCategory (20210201205305)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4315604184102078315)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 17:35:34 -0500
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 17:35:34 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 17:35:34 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Processing by AuthenticationController#verify as HTML
+Processing by WinesController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 680)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wines" WHERE "wines"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wines" WHERE "wines"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wines" WHERE "wines"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVineyard Load (0.2ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "vineyards" WHERE "vineyards"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "vineyards" WHERE "vineyards"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "vineyards" WHERE "vineyards"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$cQ3gxdUppbZYMni3dMr1J.9YKc6xq5WtE.6UNamBKeL2kfoTKHwaO"], ["created_at", "2021-02-01 22:37:58.497360"], ["updated_at", "2021-02-01 22:37:58.497360"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$D6k5xSjCEFOA/bmCVf9IeeGSZKJytwxGfsGtuo1H7G1YRXYUJ1DOK"], ["created_at", "2021-02-01 22:39:02.002261"], ["updated_at", "2021-02-01 22:39:02.002261"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$Wpd.OwPv1Zr5L/SEpiK5Muw5VI2n/ES0Gr1Y92jJTLO73ntKXhNuG"], ["created_at", "2021-02-01 22:39:50.529222"], ["updated_at", "2021-02-01 22:39:50.529222"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Create (0.2ms)[0m  [1m[32mINSERT INTO "vineyards" ("wine_region", "location", "created_at", "updated_at", "vineyard_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["wine_region", "Willamette Valley"], ["location", "New York"], ["created_at", "2021-02-01 22:39:50.539593"], ["updated_at", "2021-02-01 22:39:50.539593"], ["vineyard_name", "Ridgecrest Estate"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Create (0.2ms)[0m  [1m[32mINSERT INTO "vineyards" ("wine_region", "location", "created_at", "updated_at", "vineyard_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["wine_region", "Finger Lakes"], ["location", "New York"], ["created_at", "2021-02-01 22:39:50.542702"], ["updated_at", "2021-02-01 22:39:50.542702"], ["vineyard_name", "Treleaven"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vineyards"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Create (0.4ms)[0m  [1m[32mINSERT INTO "wines" ("vintage", "price_min", "price_max", "size", "user_id", "vineyard_id", "created_at", "updated_at", "name", "varietal") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vintage", 2019], ["price_min", 50], ["price_max", 100], ["size", 750], ["user_id", 6], ["vineyard_id", 8], ["created_at", "2021-02-01 22:39:50.553118"], ["updated_at", "2021-02-01 22:39:50.553118"], ["name", "Loveblock Marlborough"], ["varietal", "Savignon Blanc"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Create (0.3ms)[0m  [1m[32mINSERT INTO "wines" ("vintage", "price_min", "price_max", "size", "user_id", "vineyard_id", "created_at", "updated_at", "name", "varietal") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vintage", 2019], ["price_min", 100], ["price_max", 200], ["size", 500], ["user_id", 6], ["vineyard_id", 9], ["created_at", "2021-02-01 22:39:50.556577"], ["updated_at", "2021-02-01 22:39:50.556577"], ["name", "Treleaven"], ["varietal", "Cabernet"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Create (0.2ms)[0m  [1m[32mINSERT INTO "wines" ("vintage", "price_min", "price_max", "size", "user_id", "vineyard_id", "created_at", "updated_at", "name", "varietal") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vintage", 2010], ["price_min", 15], ["price_max", 45], ["size", 750], ["user_id", 6], ["vineyard_id", 8], ["created_at", "2021-02-01 22:39:50.559672"], ["updated_at", "2021-02-01 22:39:50.559672"], ["name", "Ridgecrest Estate Veltliner"], ["varietal", "Riesling"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wines"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wines" WHERE "wines"."id" = $1[0m  [["id", 10]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wines" WHERE "wines"."id" = $1[0m  [["id", 11]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wines" WHERE "wines"."id" = $1[0m  [["id", 12]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "vineyards" WHERE "vineyards"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "vineyards" WHERE "vineyards"."id" = $1[0m  [["id", 9]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$JEJrGUHlsnKvsSOmQn.2cu2iZzQAB57glezaga9mdpaSOpJuran6G"], ["created_at", "2021-02-01 22:41:34.626431"], ["updated_at", "2021-02-01 22:41:34.626431"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.2ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$DM4BsZPSXpQgoFO/AAmKT.CS29RWpsjosNRZlEHpFDELsC7rzxKjm"], ["created_at", "2021-02-01 22:44:11.984121"], ["updated_at", "2021-02-01 22:44:11.984121"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$WhnhxIKEFRF1QYNuTvLT/.tSnyryWXFTTWAqrJdAbIrtke4Bm.eeS"], ["created_at", "2021-02-01 22:46:46.059628"], ["updated_at", "2021-02-01 22:46:46.059628"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5011.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_cellar_development"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (20.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_cellar_development"[0m
+  [1m[35m (14.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_cellar_test"[0m
+  [1m[35m (125.0ms)[0m  [1m[35mCREATE DATABASE "the_cellar_development" ENCODING = 'unicode'[0m
+  [1m[35m (61.8ms)[0m  [1m[35mCREATE DATABASE "the_cellar_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "sender" character varying, "subject" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "profile_picture" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "vineyards" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "vineyards" ("id" bigserial primary key, "wine_region" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "vineyard_name" character varying)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "wines" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "wines" ("id" bigserial primary key, "vintage" integer, "price_min" integer, "price_max" integer, "size" integer, "user_id" bigint NOT NULL, "vineyard_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "varietal" character varying, "category" character varying)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_wines_on_user_id" ON "wines" ("user_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_wines_on_vineyard_id" ON "wines" ("vineyard_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "wines" ADD CONSTRAINT "fk_rails_ebbae3d400"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "wines" ADD CONSTRAINT "fk_rails_c85b791959"
+FOREIGN KEY ("vineyard_id")
+  REFERENCES "vineyards" ("id")
+[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210201205305)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210128201252),
+(20210128202045),
+(20210128202050),
+(20210129022244),
+(20210129023508),
+(20210129024215),
+(20210129025244),
+(20210129025409),
+(20210131153402),
+(20210201204952),
+(20210201205045);
+
+[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-01 22:49:59.974581"], ["updated_at", "2021-02-01 22:49:59.974581"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "6904fb4fc1891780b1c6cc638daf3c83078ed587"], ["created_at", "2021-02-01 22:49:59.980279"], ["updated_at", "2021-02-01 22:49:59.980279"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "sender" character varying, "subject" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "profile_picture" character varying)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "vineyards" CASCADE[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "vineyards" ("id" bigserial primary key, "wine_region" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "vineyard_name" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "wines" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "wines" ("id" bigserial primary key, "vintage" integer, "price_min" integer, "price_max" integer, "size" integer, "user_id" bigint NOT NULL, "vineyard_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "varietal" character varying, "category" character varying)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_wines_on_user_id" ON "wines" ("user_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_wines_on_vineyard_id" ON "wines" ("vineyard_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "wines" ADD CONSTRAINT "fk_rails_ebbae3d400"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "wines" ADD CONSTRAINT "fk_rails_c85b791959"
+FOREIGN KEY ("vineyard_id")
+  REFERENCES "vineyards" ("id")
+[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210201205305)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210128201252),
+(20210128202045),
+(20210128202050),
+(20210129022244),
+(20210129023508),
+(20210129024215),
+(20210129025244),
+(20210129025409),
+(20210131153402),
+(20210201204952),
+(20210201205045);
+
+[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-01 22:50:00.067162"], ["updated_at", "2021-02-01 22:50:00.067162"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-02-01 22:50:00.071825"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "6904fb4fc1891780b1c6cc638daf3c83078ed587"], ["created_at", "2021-02-01 22:50:00.076110"], ["updated_at", "2021-02-01 22:50:00.076110"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$39whjLhKI4eb66BBDGC11.DIlb.Ela7GnI9ycHa9qk7x80QQaSXiO"], ["created_at", "2021-02-01 22:50:00.295507"], ["updated_at", "2021-02-01 22:50:00.295507"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4315604184102078315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddWineCategory (20210201205305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "wines" DROP COLUMN "category"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210201205305"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixVineyardName (20210201205045)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4315604184102078315)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (73.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_cellar_development"[0m
+  [1m[35m (25.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_cellar_test"[0m
+  [1m[35m (127.1ms)[0m  [1m[35mCREATE DATABASE "the_cellar_development" ENCODING = 'unicode'[0m
+  [1m[35m (153.0ms)[0m  [1m[35mCREATE DATABASE "the_cellar_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4315604184102078315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210128201252)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210128201252"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVineyards (20210128202045)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "vineyards" ("id" bigserial primary key, "wine_region" character varying, "location" character varying, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210128202045"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWines (20210128202050)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "wines" ("id" bigserial primary key, "vintage" integer, "type" character varying, "varietal" character varying, "price_min" integer, "price_max" integer, "region" character varying, "size" integer, "user_id" bigint NOT NULL, "vineyard_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_ebbae3d400"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_c85b791959"
+FOREIGN KEY ("vineyard_id")
+  REFERENCES "vineyards" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_wines_on_user_id" ON "wines" ("user_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_wines_on_vineyard_id" ON "wines" ("vineyard_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210128202050"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumn (20210129022244)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "wines" DROP COLUMN "varietal"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210129022244"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumn (20210129023508)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "wines" ADD "name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210129023508"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveRegion (20210129024215)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "wines" DROP COLUMN "region"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210129024215"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveType (20210129025244)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "wines" DROP COLUMN "type"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210129025244"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddVarietal (20210129025409)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "wines" ADD "varietal" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210129025409"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProfilePicture (20210131153402)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_picture" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210131153402"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20210201204952)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "subject" character varying, "body" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_messages_on_user_id" ON "messages" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210201204952"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixVineyardName (20210201205045)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "vineyards" DROP COLUMN "name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "vineyards" ADD "vineyard_name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210201205045"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddWineCategory (20210201205305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "wines" ADD "category" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210201205305"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-01 22:50:53.457242"], ["updated_at", "2021-02-01 22:50:53.457242"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4315604184102078315)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$RqlfAO.zavgFQiIGk16CEe8UWIgKbDCfZg9UN1LalAkeEOd2Eyxzm"], ["created_at", "2021-02-01 22:51:00.108549"], ["updated_at", "2021-02-01 22:51:00.108549"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$Rjg3yqcc5Bmkygh6PIjOLeR82EGhjI3STFfy1pHRWHMV/fUGohDle"], ["created_at", "2021-02-01 22:51:17.389128"], ["updated_at", "2021-02-01 22:51:17.389128"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  [1m[36mVineyard Load (0.3ms)[0m  [1m[34mSELECT "vineyards".* FROM "vineyards"[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$c7BLUj4bztjFDURc2sdoLeeMGEP67HHAhsPgmsMBSnd89IwAMNibi"], ["created_at", "2021-02-01 22:52:07.761438"], ["updated_at", "2021-02-01 22:52:07.761438"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("subject", "body", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["subject", "Dom Perignon"], ["body", "Interested in your 2001 bottle of Dom"], ["user_id", 3], ["created_at", "2021-02-01 22:52:07.775961"], ["updated_at", "2021-02-01 22:52:07.775961"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "messages"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Create (0.3ms)[0m  [1m[32mINSERT INTO "vineyards" ("wine_region", "location", "created_at", "updated_at", "vineyard_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["wine_region", "Willamette Valley"], ["location", "New York"], ["created_at", "2021-02-01 22:52:07.786930"], ["updated_at", "2021-02-01 22:52:07.786930"], ["vineyard_name", "Ridgecrest Estate"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVineyard Create (0.3ms)[0m  [1m[32mINSERT INTO "vineyards" ("wine_region", "location", "created_at", "updated_at", "vineyard_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["wine_region", "Finger Lakes"], ["location", "New York"], ["created_at", "2021-02-01 22:52:07.789964"], ["updated_at", "2021-02-01 22:52:07.789964"], ["vineyard_name", "Treleaven"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "vineyards"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Create (0.8ms)[0m  [1m[32mINSERT INTO "wines" ("vintage", "price_min", "price_max", "size", "user_id", "vineyard_id", "created_at", "updated_at", "name", "varietal") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vintage", 2019], ["price_min", 50], ["price_max", 100], ["size", 750], ["user_id", 3], ["vineyard_id", 1], ["created_at", "2021-02-01 22:52:07.804392"], ["updated_at", "2021-02-01 22:52:07.804392"], ["name", "Loveblock Marlborough"], ["varietal", "Savignon Blanc"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Create (0.8ms)[0m  [1m[32mINSERT INTO "wines" ("vintage", "price_min", "price_max", "size", "user_id", "vineyard_id", "created_at", "updated_at", "name", "varietal") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vintage", 2019], ["price_min", 100], ["price_max", 200], ["size", 500], ["user_id", 3], ["vineyard_id", 2], ["created_at", "2021-02-01 22:52:07.810198"], ["updated_at", "2021-02-01 22:52:07.810198"], ["name", "Treleaven"], ["varietal", "Cabernet"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWine Create (0.4ms)[0m  [1m[32mINSERT INTO "wines" ("vintage", "price_min", "price_max", "size", "user_id", "vineyard_id", "created_at", "updated_at", "name", "varietal") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vintage", 2010], ["price_min", 15], ["price_max", 45], ["size", 750], ["user_id", 3], ["vineyard_id", 1], ["created_at", "2021-02-01 22:52:07.820844"], ["updated_at", "2021-02-01 22:52:07.820844"], ["name", "Ridgecrest Estate Veltliner"], ["varietal", "Riesling"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wines"[0m
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 18:32:28 -0500
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 18:32:28 -0500
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 18:32:29 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Processing by WinesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 1221)
+
+
+  [1m[36mWine Load (0.6ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 11.2ms | ActiveRecord: 10.1ms | Allocations: 23886)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2021-02-01 18:32:46 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 189ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 7718)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 18:32:46 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 18:32:46 -0500
+Processing by WinesController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mWine Load (5.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 5.4ms | Allocations: 7284)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 18:35:22 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 18:35:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 2503)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 18:35:22 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 823)
+
+
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 18:35:50 -0500
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 18:35:50 -0500
+Processing by WinesController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mWine Load (11.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 1.9ms | ActiveRecord: 11.7ms | Allocations: 7416)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 18:35:50 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 735)
+
+
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 19:05:51 -0500
+Processing by MessagesController#index as HTML
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 19:05:51 -0500
+Processing by WinesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 19:05:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mWine Load (10.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 27.4ms | Allocations: 24437)
+
+
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 22.9ms | Allocations: 31891)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 19:05:51 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 746)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 19:09:43 -0500
+Processing by WinesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 19:09:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mWine Load (8.8ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 4.2ms | ActiveRecord: 8.8ms | Allocations: 5661)
+
+
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 19:09:43 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (10.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 13ms (Views: 1.9ms | ActiveRecord: 10.4ms | Allocations: 11160)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 19:09:43 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 720)
+
+
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 19:10:24 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 19:10:24 -0500
+Processing by MessagesController#index as HTML
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 19:10:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mMessage Load (8.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 2.2ms | ActiveRecord: 8.3ms | Allocations: 6875)
+
+
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1614)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 19:10:24 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 718)
+
+
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 19:15:09 -0500
+Processing by MessagesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 19:15:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 19:15:09 -0500
+Processing by WinesController#index as HTML
+  [1m[36mMessage Load (2.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 2.5ms | Allocations: 8418)
+
+
+  [1m[36mWine Load (0.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 4.7ms | Allocations: 12068)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 19:15:09 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 745)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 19:15:31 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 718)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 19:27:24 -0500
+Processing by WinesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 19:27:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 19:27:24 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mWine Load (3.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+  [1m[36mMessage Load (4.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+Completed 200 OK in 42ms (Views: 42.1ms | ActiveRecord: 13.4ms | Allocations: 26010)
+
+
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 27ms (Views: 27.0ms | ActiveRecord: 10.3ms | Allocations: 19499)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 19:27:24 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 744)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2021-02-01 20:36:05 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 176ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 2898)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:36:06 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:36:06 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:36:06 -0500
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1666)
+
+
+Processing by MessagesController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mMessage Load (8.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 8.2ms | Allocations: 7678)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:39:00 -0500
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:39:00 -0500
+Processing by WinesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:39:00 -0500
+Processing by MessagesController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mWine Load (6.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 6.5ms | Allocations: 7989)
+
+
+  [1m[36mMessage Load (2.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 19ms (Views: 11.0ms | ActiveRecord: 7.3ms | Allocations: 21210)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 20:39:01 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 744)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:42:06 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.9ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1355)
+
+
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:42:06 -0500
+Processing by MessagesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:42:06 -0500
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 932)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 20:42:06 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 717)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:49:05 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 4.5ms | Allocations: 3149)
+
+
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:49:05 -0500
+Processing by MessagesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:49:05 -0500
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 953)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 20:49:06 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 743)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:49:28 -0500
+Processing by WinesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:49:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mWine Load (11.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:49:28 -0500
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 7.7ms | ActiveRecord: 11.5ms | Allocations: 8166)
+
+
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 1.1ms | Allocations: 3377)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 20:49:29 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 718)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:51:13 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:51:13 -0500
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:51:13 -0500
+Processing by WinesController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Processing by MessagesController#index as HTML
+  [1m[36mWine Load (0.6ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.6ms | Allocations: 8886)
+
+
+  [1m[36mMessage Load (5.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 18ms (Views: 7.7ms | ActiveRecord: 10.4ms | Allocations: 18876)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 20:51:13 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 744)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 20:51:49 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 20:51:49 -0500
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 20:51:49 -0500
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 1761)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 1849)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 20:51:49 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 719)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2021-02-01 21:04:32 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 175ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 2952)
+
+
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 21:04:32 -0500
+Processing by WinesController#index as HTML
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 21:04:33 -0500
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1374)
+
+
+Processing by MessagesController#index as HTML
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 21:04:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+  [1m[36mMessage Load (5.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 5.7ms | Allocations: 7134)
+
+
+Started GET "/vineyards" for 127.0.0.1 at 2021-02-01 21:05:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/vineyards"):
+  
+Started GET "/messages" for 127.0.0.1 at 2021-02-01 21:05:48 -0500
+Processing by MessagesController#index as HTML
+Started GET "/wines" for 127.0.0.1 at 2021-02-01 21:05:48 -0500
+Processing by WinesController#index as HTML
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.2ms | Allocations: 2706)
+
+
+  [1m[36mWine Load (2.8ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/wines_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 8.5ms | Allocations: 13597)
+
+
+Started GET "/auth/verify" for 127.0.0.1 at 2021-02-01 21:05:49 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 744)
+
+
