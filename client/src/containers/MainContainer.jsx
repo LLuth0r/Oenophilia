@@ -8,6 +8,7 @@ import EditWine from '../screens/EditWine/EditWine';
 import ProfilePage from '../screens/ProfilePage/ProfilePage';
 import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
 import {getAllVineyards, postVineyard, putVineyard, deleteVineyard, getOneVineyard } from '../services/vineyards';
+import {getAllMessages, postMessage, deleteMessage, getOneMessage } from '../services/messages';
 import WineCard from '../components/WineCard/WineCard';
 import RedWines from '../screens/RedWines/RedWines';
 import WhiteWines from '../screens/WhiteWines/WhiteWines';
@@ -16,6 +17,7 @@ import Champagnes from '../screens/Champagnes/Champagnes';
 export default function MainContainer(props) {
     const [wines, setWines] = useState([]);
     const [vineyards, setVineyards] = useState([]);
+    const [messages, setMessages] = useState([]);
     const history = useHistory();
     const {currentUser} = props;
 
@@ -35,10 +37,18 @@ export default function MainContainer(props) {
         fetchVineyards();
     }, []);
 
+    useEffect(() => {
+        const fetchMessages = async () => {
+            const messageData = await getAllMessages();
+            setMessages(messageData);
+        }
+        fetchMessages();
+    }, []);
+
     const handleCreate = async (wineData) => {
         const newWine = await postWine(wineData);
         setWines(prevState => [...prevState, newWine])
-        history.push('/user')
+        history.push('/profile')
     }
 
     const handleDelete = async (id) => {
@@ -54,6 +64,13 @@ export default function MainContainer(props) {
             return wineItem.id === Number(id) ? updatedWine : wineItem
         }))
         history.push('/user')
+    }
+
+    const handleDeleteMessage = async (id) => {
+        await deleteMessage(id);
+        setMessages(prevState => prevState.filter(messageItem => {
+            return messageItem.id !== id
+        }))
     }
 
 
@@ -84,22 +101,27 @@ export default function MainContainer(props) {
            <Route path='/wines/white_wines'>
                <WhiteWines
                currentUser={currentUser}
+               wines={wines}
                />
            </Route>
            <Route path='/wines/red_wines'>
                <RedWines
                currentUser={currentUser}
+               wines={wines}
                />
            </Route>
            <Route path='/wines/champagnes'>
                <Champagnes
                currentUser={currentUser}
+               wines={wines}
                />
            </Route>
            <Route exact path='/profile'>
                <ProfilePage
                wines={wines}
+               messages={messages}
                handleDelete={handleDelete}
+               handleDeleteMessage={handleDeleteMessage}
                currentUser={currentUser}
                />
            </Route>

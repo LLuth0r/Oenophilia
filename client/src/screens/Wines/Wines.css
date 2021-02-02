@@ -1,0 +1,35 @@
+.wine_page{
+    width: 80vw;
+    margin: 0 10vw 0 10vw;
+}
+
+.wines_table_header {
+    display: grid;
+    grid-template-columns: 100px 275px 100px 160px 125px 125px 125px;
+    grid-template-rows: repeat(1, auto);
+    text-align: center;
+}
+
+.wines {
+    display: grid;
+    grid-template-columns: 100px 275px 100px 160px 125px 125px 125px;
+    grid-template-rows: repeat(1, auto);
+    text-align: center;
+}
+
+.vintage {
+    grid-column-start: 1;
+}
+
+.wine_name {
+    grid-column-start: 2;
+}
+
+.category {
+    grid-column-start: 3;
+}
+
+.variety {
+    grid-column-start: 4;
+}
+

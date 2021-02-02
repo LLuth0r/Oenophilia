@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function WhiteWines(props) {
-    const { currentUser, wines } = props;
+	const { wines } = props;
 
-    return (
-        <div>
-            White Wines Bitch..
-        </div>
-    )
+	return (
+		<div className="white_wines">
+			{wines
+				.filter((wine) => {
+					return wine.category === "White";
+				})
+				.map((wine) => (
+					<Link className="card" to={`/wine/reds`}>
+						<div>{wine.name}</div>
+					</Link>
+				))}
+		</div>
+	);
 }

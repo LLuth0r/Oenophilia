@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getOneWine } from '../../services/wines';
 import { useParams } from 'react-router-dom';
+import './WineDetail.css';
 
 
 export default function WineDetail(props) {
@@ -17,13 +18,13 @@ export default function WineDetail(props) {
 
     console.log(props);
     return (
-        <div>
+        <div className='wine_details'>
             <h3>Brand: {wineItem?.name}</h3>
             <h4>Vintage: {wineItem?.vintage}</h4>
-            <h4>Type: {wineItem?.varietal}</h4>
+            <h4>Category: {wineItem?.category}</h4>
+            <h4>Variety: {wineItem?.varietal}</h4>
             <h4>{wineItem?.size}mL</h4>
-            <h6>Min. Price ${wineItem?.price_min}</h6>
-            <h6>Max. Price ${wineItem?.price_max}</h6>
+            <h6>Min. Price ${wineItem?.price_min} / Max. Price ${wineItem?.price_max}</h6>
         </div>
     )
 }
