@@ -13,6 +13,7 @@ import WineCard from '../components/WineCard/WineCard';
 import RedWines from '../screens/RedWines/RedWines';
 import WhiteWines from '../screens/WhiteWines/WhiteWines';
 import Champagnes from '../screens/Champagnes/Champagnes';
+import CreateMessage from '../screens/CreateMessage/CreateMessage';
 
 export default function MainContainer(props) {
     const [wines, setWines] = useState([]);
@@ -71,6 +72,12 @@ export default function MainContainer(props) {
         history.push('/profile')
     }
 
+    const handleCreateMessage = async (messageData) => {
+        const newMessage = await postMessage(messageData);
+        setMessages(prevState => [...prevState, newMessage])
+        history.push('/profile')
+    }
+
 
     return (
        <Switch>
@@ -115,6 +122,12 @@ export default function MainContainer(props) {
                <Champagnes
                currentUser={currentUser}
                wines={wines}
+               />
+           </Route>
+           <Route path='/messages/add'>
+               <CreateMessage
+               handleCreateMessage={handleCreateMessage}
+               currentUser={currentUser}
                />
            </Route>
            <Route exact path='/profile'>

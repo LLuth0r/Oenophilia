@@ -6,7 +6,7 @@ import UpdateIcon from "@material-ui/icons/Update";
 import Button from "@material-ui/core/Button";
 
 export default function ProfilePage(props) {
-	const { currentUser, users, wines, messages, handleDelete } = props;
+	const { currentUser, users, wines, messages, handleDelete, handleDeleteMessage } = props;
 
 	return (
 		<div className="profile_page">
@@ -56,7 +56,7 @@ export default function ProfilePage(props) {
 				<div className="message_header">
 					<div className="message_timestamp">Date</div>
 					<div className="message_sender">Sender</div>
-					<div className="message_subject">Subject</div>
+					<div className="message_subject">Message</div>
 				</div>
 				{messages
 					.filter((message) => {
@@ -69,16 +69,16 @@ export default function ProfilePage(props) {
 							<div className="user_messages">
 								<DeleteIcon
 									className="delete_icon"
-									onClick={() => handleDelete(message.id)}
+									onClick={() => handleDeleteMessage(message.id)}
 								/>
 								<p className="date" key={message.id}>
 									{getDate}
-								</p>
-								<p className="sender" key={message.id}>
-									{message.userName}
-								</p>
+								</p>								
 								<p className="message" key={message.id}>
 									{message.subject}
+								</p>
+								<p className="sender" key={message.id}>
+									{message.body}
 								</p>
 							</div>
 						);

@@ -16,14 +16,20 @@ class WinesController < ApplicationController
 
 
     def create
-        @wine = Wine.new(wine_params)
-        @wine.build_vineyard
-        @wine.user = @current_user
-        puts @wine.save!
-        if @wine.save
-            render json: @wine, status: :created, location: @wine
-        else
-            render json: @wine.errors, status: :unprocessable_entity
+        puts params
+        @wine = Wine.new(name: params[:wine][:name],varietal: params[:wine][:varietal], vintage: params[:wine][:vintage], price_min: params[:wine][:price_min],
+        price_max: params[:wine][:price_max], size: params[:wine][:size], category: params[:wine][:category])
+        @vineyard = Vineyard.new(vineyard_name: params[:vineyard][:vineyard_name])
+        puts @vineyard.inspect
+        # @wine.build_vineyard
+        if @vineyard.save 
+            @wine.vineyard = @vineyard
+            @wine.user = @current_user
+            if @wine.save
+                render json: @wine, status: :created, location: @wine
+            else
+                render json: @wine.errors, status: :unprocessable_entity
+            end
         end
     end
 
@@ -53,6 +59,10 @@ class WinesController < ApplicationController
 
     def wine_params
         params.require(:wine).permit(:name, :vintage, :varietal, :price_min, 
-            :price_max, :size, :category, vineyard_attributes: [:vineyard_name])
+            :price_max, :size, :category, :vineyard_name)
+    end
+
+    def vineyard_params
+        params.require(:vineyard).permit(:vineyard_name)
     end
 end

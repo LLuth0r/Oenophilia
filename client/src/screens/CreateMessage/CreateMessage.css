@@ -1,0 +1,23 @@
+.create-message {
+    display: flex;
+    flex-direction: column;
+	width: 80vw;
+	margin: 20px 10vw 20px 10vw;
+}
+
+.add_form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 100px;
+}
+
+.form {
+	width: 300px;
+	margin: 50px;
+}
+
+.add_wine_button {
+	margin-top: 10px;
+}

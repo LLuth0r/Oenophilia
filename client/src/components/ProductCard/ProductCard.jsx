@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import './ProductCard.css';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
 	root: {
@@ -27,7 +28,6 @@ const useStyles = makeStyles({
 
 export default function ProductCard(props) {
 	const classes = useStyles();
-	console.log(props)
 
 	return (
 		<Card className={classes.card}>
@@ -39,8 +39,10 @@ export default function ProductCard(props) {
 				<p className='product-card'>
 					Min. Price ${props.price_min} / Max Price ${props.price_max}
 				</p>
-				<p className='product-card'>{props.vineyard.vineyard_name}</p>
+				{/* <p className='product-card'>{props.vineyard.vineyard_name}</p> */}
+				<Link to='/messages/add'>
 				<MailOutlineIcon />
+				</Link>
 			</CardContent>
 		</Card>
 	);
