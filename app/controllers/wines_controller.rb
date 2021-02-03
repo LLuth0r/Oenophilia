@@ -1,6 +1,7 @@
 class WinesController < ApplicationController
     before_action :set_wine, only: :show
     before_action :authorize_request, only: [:create, :update, :destroy]
+    
 
     def index
         @wines = Wine.all
@@ -52,6 +53,6 @@ class WinesController < ApplicationController
 
     def wine_params
         params.require(:wine).permit(:name, :vintage, :varietal, :price_min, 
-            :price_max, :size, vineyard_attributes: [:wine_region, :location, :name])
+            :price_max, :size, :category, vineyard_attributes: [:vineyard_name])
     end
 end

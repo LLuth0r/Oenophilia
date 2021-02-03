@@ -18,29 +18,27 @@ export default function CreateWine(props) {
 	const classes = useStyles();
 	const [formData, setFormData] = useState({
 		vintage: "",
-        name: "",
-        category: '',
+		name: "",
+		category: "",
 		varietal: "",
 		price_min: "",
 		price_max: "",
 		size: "",
-		wine_region: "",
-		location: "",
-		vineyardName: "",
+		vineyard_name: "",
 	});
 
 	const {
 		name,
-        vintage,
-        category,
+		vintage,
+		category,
 		varietal,
 		price_min,
 		price_max,
 		size,
-		vineyardName,
-		} = formData;
-    
-	const { handleCreate } = props;
+		vineyard_name,
+	} = formData;
+
+	const { handleCreate, handleCreateVineyard } = props;
 	const bottle_size = [
 		{
 			value: "187.5",
@@ -104,12 +102,13 @@ export default function CreateWine(props) {
 	};
 
 	return (
-		<div className="create_page">
+		<div className="create-page">
 			<form
 				className={classes.root}
 				onSubmit={(e) => {
 					e.preventDefault();
 					handleCreate(formData);
+					handleCreateVineyard(formData);
 				}}
 			>
 				<TextField
@@ -197,8 +196,8 @@ export default function CreateWine(props) {
 					required
 					multiline
 					onChange={handleChange}
-					name="vineyardName"
-					value={vineyardName}
+					name="vineyard_name"
+					value={vineyard_name}
 					className="textfield"
 					label="Vineyard Name"
 					variant="outlined"

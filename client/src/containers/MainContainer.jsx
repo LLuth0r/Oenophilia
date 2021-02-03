@@ -6,8 +6,9 @@ import Wines from '../screens/Wines/Wines';
 import WineDetail from '../screens/WineDetail/WineDetail';
 import EditWine from '../screens/EditWine/EditWine';
 import ProfilePage from '../screens/ProfilePage/ProfilePage';
-import {getAllWines, postWine, putWine, deleteWine, getOneWine } from '../services/wines';
+import {getAllWines, postWine, putWine, deleteWine } from '../services/wines';
 import {getAllMessages, postMessage, deleteMessage, getOneMessage } from '../services/messages';
+import {getAllVineyards, postVineyard, deleteVinyard, putVineyard} from '../services/vineyards';
 import WineCard from '../components/WineCard/WineCard';
 import RedWines from '../screens/RedWines/RedWines';
 import WhiteWines from '../screens/WhiteWines/WhiteWines';
@@ -64,6 +65,12 @@ export default function MainContainer(props) {
         }))
     }
 
+    const handleCreateVineyard = async (vineyardData) => {
+        const newVineyard = await postVineyard(vineyardData);
+        setVineyards(prevState => [...prevState, newVineyard])
+        history.push('/profile')
+    }
+
 
     return (
        <Switch>
@@ -88,6 +95,7 @@ export default function MainContainer(props) {
            <Route exact path='/wines/add'>
                <CreateWine
                handleCreate={handleCreate}
+               handleCreateVineyard={handleCreateVineyard}
                currentUser={currentUser}
                />
            </Route>

@@ -5,12 +5,12 @@ class UsersController < ApplicationController
     def index
         @users = User.all
 
-        render json: @users
+        render json: @users, include: :messages
     end
 
     #GET /users/1
     def show
-        render json: @user      
+        render json: @user, include: :messages      
     end
 
     #POST /users
@@ -49,6 +49,6 @@ class UsersController < ApplicationController
         end
 
         def user_params
-            params.require(:user).permit(:username, :email, :password)
+            params.require(:user).permit(:username, :email, :password, :location)
         end
 end

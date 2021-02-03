@@ -1,61 +1,67 @@
 .navbar {
-    height: 4rem;
-    width: 100vw;
-    background-color: #6d6875;
-    position: sticky;
-    top:0;
-    left:0;
-    font-family: "Krona One", sans-serif;
-  }
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 100vh;
+	width: 100vw;
+	position: sticky;
+	top: 0;
+	left: 0;
+}
 
-  .navmenu {
-    display: grid;
-    grid-template-columns: auto auto; 
-    font-size: 12px;
+.navmenu {
+	display: grid;
+	grid-template-columns: auto auto;
+	font-size: 14px;
+	background-color: #6d6875;
 }
 
 .navigation {
-  grid-column-start: 2;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
+	grid-column-start: 2;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
 }
-  .user {
-    grid-column-start: 1;
-    font-size: 12px;
-    color: #c5c3c6;
-    width:100%;
-    margin-left: 15px;
-    justify-content: flex-start;
-    margin-top: 3rem;
-  }
-
-  .allwines{
-    text-decoration: none;
-    margin: 3rem 15px 0 0;
-    color: white;
+.user {
+	grid-column-start: 1;
+	font-size: 14px;
+	color: #c5c3c6;
+	width: 100%;
+	margin-left: 15px;
+	justify-content: flex-start;
+	margin-top: 3rem;
 }
 
-.profile{
-    text-decoration: none;
-    margin: 3rem 15px 0 0;
-    color: white;
+.allwines {
+	text-decoration: none;
+	margin: 3rem 15px 0 0;
+	color: white;
 }
 
-.navlogin{
-    text-decoration: none;
-    margin: 3rem 15px 0 0;
-    color: white;
+.profile {
+	text-decoration: none;
+	margin: 3rem 15px 0 0;
+	color: white;
 }
 
-.navregister{
-    text-decoration: none;
-    margin: 3rem 15px 0 0;
-    color: white;
+.navlogin {
+	text-decoration: none;
+	margin: 3rem 15px 0 0;
+	color: white;
 }
 
-  .signout {
-    text-decoration: none;
-    color:white;
-    margin: 3rem 15px 0 0;
-  }
+.navregister {
+	text-decoration: none;
+	margin: 3rem 15px 0 0;
+	color: white;
+}
+
+.signout {
+	text-decoration: none;
+	color: white;
+	margin: 3rem 15px 0 0;
+}
+
+.my-precious {
+	flex: 2;
+}

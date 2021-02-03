@@ -1,4 +1,5 @@
 class VineyardsController < ApplicationController
+    before_action :set_vineyard, only: :show
     before_action :authorize_request, only: [:create, :update, :destroy]
 
     #GET /vineyards
@@ -44,6 +45,6 @@ class VineyardsController < ApplicationController
     end
 
     def vineyard_params
-        params.require(:vineyard).permit(:name, :wine_region, :location)
+        params.require(:vineyard).permit(:vineyard_name)
     end
 end
