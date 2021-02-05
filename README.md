@@ -153,27 +153,23 @@ Tablet Edit Product
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Build Rails Model   |    L     |     3 hrs      |     0 hrs     |    TBD      |
-| Find Assets         |    H     |     2 hrs      |     0 hrs     |     TBD     |
-| Set Up Seed File    |    H     |     1 hrs      |     0 hrs     |     TBD     |
-| Build Controllers   |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Routes        |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Landing Page  |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Create React App    |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Nav/Hr/Ftr    |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Layout        |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Product Detail|    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build User Page     |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Add Product   |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Edit Product  |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Login / Signup|    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Basic Styling       |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| Advanced Styling    |    H     |     3 hrs      |     0 hrs     |     TBD     |
-| TOTAL               |          |     45 hrs     |     0 hrs     |     TBD     |
-
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
-
-<br>
+| Build Rails Model   |    L     |     3 hrs      |     3 hrs     |     TBD      |
+| Find Assets         |    H     |     2 hrs      |     1 hrs     |     TBD     |
+| Set Up Seed File    |    H     |     1 hrs      |     2 hrs     |     TBD     |
+| Build Controllers   |    H     |     3 hrs      |     4 hrs     |     TBD     |
+| Build Routes        |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Build Landing Page  |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Create React App    |    H     |     3 hrs      |     2 hrs     |     TBD     |
+| Build Nav/Hr/Ftr    |    H     |     3 hrs      |     4 hrs     |     TBD     |
+| Build Layout        |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Build Product Detail|    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Build User Page     |    H     |     3 hrs      |     4 hrs     |     TBD     |
+| Build Add Product   |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Build Edit Product  |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Build Login / Signup|    H     |     3 hrs      |     2 hrs     |     TBD     |
+| Basic Styling       |    H     |     3 hrs      |     4 hrs     |     TBD     |
+| Advanced Styling    |    H     |     3 hrs      |     6 hrs     |     TBD     |
+| TOTAL               |          |     45 hrs     |     50 hrs    |     TBD     |
 
 ### Server (Back End)
 
@@ -187,14 +183,11 @@ Tablet Edit Product
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- _Integrated Wine Bottle Image API: matches label with label online_
+- _Integrated Wine Retail Price API_
+- _Message System for Bartering_
+- _Search and Filter functions_
+- _Wine List Table_
 
 ***
 
-## Code Showcase
-
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
-## Code Issues & Resolutions
-
-> Use this section to list of all major issues encountered and their resolution.
